@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Breakfast</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body>
+    <a-scene embedded="" arjs="">
+        <a-assets>
+            <a-asset-item id="dona" src="modelos3d/dona.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity>
+            <a-entity position="0 0 0" rotation="-90 -90 90" scale="1 1 1" gltf-model="#dona" animation-mixer="clip: *;"></a-entity>
+            <a-animation attribute="rotation" dur="20000" fill="forwards" to="0 0 360" repeat="indefinite"></a-animation>
+        </a-entity>
+        
+
+        <a-marker-camera preset='hiro'></a-marker-camera>
+
+    </a-scene>
+</body>
+</html>
